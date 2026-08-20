@@ -2,24 +2,29 @@
 .teaser-container .teaser-wrapper .teaser > div {
   display: flex;
 }
+
 .teaser-container .teaser-wrapper .teaser > div > div {
   width: 50%;
   margin-left: 30px;
 }
+
 .teaser-container .teaser-wrapper .teaser > div h1 {
   font-size: 2.5em;
   line-height: 42px;
 }
+
 .teaser-container .teaser-wrapper .teaser > div ul {
   list-style: none;
   margin: 20px 0px;
 }
+
 .teaser-container .teaser-wrapper .teaser > div ul li {
   position: relative;
   color: #636469;
   font-size: 17px;
   line-height: 33px;
 }
+
 .teaser-container .teaser-wrapper .teaser > div ul li:before {
   content: "✓";
   position: absolute;
@@ -37,9 +42,11 @@
   font-weight: 700;
   font-family: sans-serif;
 }
+
 .teaser-container .teaser-wrapper .teaser P {
   margin-top: 8%;
 }
+
 .teaser-container .teaser-wrapper .teaser P a:first-child {
   color: #fff;
   background: linear-gradient(104deg, #005dba 39.94%, #6d29b6);
@@ -49,6 +56,7 @@
   font-weight: bold;
   text-decoration: none;
 }
+
 .teaser-container .teaser-wrapper .teaser P a:last-child {
   color: #005dba;
   background: #fff;
@@ -60,6 +68,7 @@
   margin-left: 0%;
   text-decoration: none;
 }
+
 .teaser-container .teaser-wrapper .teaser P a:last-child::after {
   content: "→";
   position: absolute;
@@ -70,12 +79,15 @@
   font-size: 18px;
   font-family: sans-serif;
 }
+
 .teaser-container .teaser-wrapper .two > div {
   flex-direction: row-reverse;
 }
+
 .teaser-container .teaser-wrapper .three > div {
   flex-direction: column;
 }
+
 .teaser-container .teaser-wrapper .four > div {
   flex-direction: column-reverse;
 }/*# sourceMappingURL=teaser.css.map */
