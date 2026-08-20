@@ -1,4 +1,17 @@
 @charset "UTF-8";
+
+.teaser-container .teaser-wrapper .two > div {
+  flex-direction: row-reverse;
+}
+
+.teaser-container .teaser-wrapper .three > div {
+  flex-direction: column;
+}
+
+.teaser-container .teaser-wrapper .four > div {
+  flex-direction: column-reverse;
+}
+
 .teaser-container .teaser-wrapper .teaser > div {
   display: flex;
 }
@@ -15,7 +28,7 @@
 
 .teaser-container .teaser-wrapper .teaser > div ul {
   list-style: none;
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .teaser-container .teaser-wrapper .teaser > div ul li {
@@ -25,7 +38,7 @@
   line-height: 33px;
 }
 
-.teaser-container .teaser-wrapper .teaser > div ul li:before {
+.teaser-container .teaser-wrapper .teaser > div ul li::before {
   content: "✓";
   position: absolute;
   left: -35px;
@@ -43,11 +56,11 @@
   font-family: sans-serif;
 }
 
-.teaser-container .teaser-wrapper .teaser P {
+.teaser-container .teaser-wrapper .teaser p {
   margin-top: 8%;
 }
 
-.teaser-container .teaser-wrapper .teaser P a:first-child {
+.teaser-container .teaser-wrapper .teaser p a:first-child {
   color: #fff;
   background: linear-gradient(104deg, #005dba 39.94%, #6d29b6);
   padding: 12px 30px;
@@ -57,7 +70,7 @@
   text-decoration: none;
 }
 
-.teaser-container .teaser-wrapper .teaser P a:last-child {
+.teaser-container .teaser-wrapper .teaser p a:last-child {
   color: #005dba;
   background: #fff;
   position: relative;
@@ -65,11 +78,11 @@
   border-radius: 5px;
   font-size: 18px;
   font-weight: bold;
-  margin-left: 0%;
+  margin-left: 0;
   text-decoration: none;
 }
 
-.teaser-container .teaser-wrapper .teaser P a:last-child::after {
+.teaser-container .teaser-wrapper .teaser p a:last-child::after {
   content: "→";
   position: absolute;
   right: 14px;
@@ -79,15 +92,3 @@
   font-size: 18px;
   font-family: sans-serif;
 }
-
-.teaser-container .teaser-wrapper .two > div {
-  flex-direction: row-reverse;
-}
-
-.teaser-container .teaser-wrapper .three > div {
-  flex-direction: column;
-}
-
-.teaser-container .teaser-wrapper .four > div {
-  flex-direction: column-reverse;
-}/*# sourceMappingURL=teaser.css.map */

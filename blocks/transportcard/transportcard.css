@@ -9,24 +9,24 @@
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
-  padding: 28px 0px;
+  padding: 28px 0;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
 }
 
-.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard__image {
+.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard-image {
   width: 270px;
   height: 70px;
   margin-bottom: 16px;
 }
 
-.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard__image .icon-desk,
-.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard__image .icon-time {
+.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard-image .icon-desk,
+.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard-image .icon-time {
   width: 100%;
   height: 100%;
 }
 
-.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard__number {
+.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard-number {
   margin: 0 0 12px;
   font-size: 50px;
   color: #d9d9d9;
@@ -37,14 +37,14 @@
   transition: 0.2s ease-in-out;
 }
 
-.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard__title {
+.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard-title {
   margin: 0 0 12px;
   font-size: 22px;
   font-weight: 700;
   color: #222;
 }
 
-.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard__description {
+.transportcard-container .transportcard-wrapper .transportcard .custom-transportcard-description {
   margin: 0;
   font-size: 16px;
   line-height: 1.5;
@@ -65,7 +65,7 @@
 }
 
 .transportcard-container .transportcard-wrapper .transportcard .custom-transportcard:hover {
-  border-bottom: 0px solid red;
+  border-bottom: 0 solid red;
   transition: all 0.3s ease-in-out;
 }
 
@@ -76,4 +76,4 @@
 
 .transportcard-container .transportcard-wrapper .transportcard .custom-transportcard:hover::after {
   transform: scaleX(1);
-}/*# sourceMappingURL=transportcard.css.map */
+}
