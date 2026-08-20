@@ -3,7 +3,6 @@ export default function decorate(block) {
 
   cards.forEach((card) => {
     card.classList.add('custom-transportcard');
-    console.log(card);
 
     const number = card.querySelector('h1');
     number?.classList.add('custom-transportcard__number');
