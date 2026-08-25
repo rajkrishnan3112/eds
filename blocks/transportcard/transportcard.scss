@@ -1,7 +1,7 @@
 .transportcard-container {
   .transportcard-wrapper {
     .transportcard {
-      display:grid;
+      display: grid;
       gap: 20px;
       grid-template-columns: repeat(4, 1fr);
 
@@ -10,9 +10,9 @@
         background: #fff;
         border: 1px solid #e5e5e5;
         border-radius: 5px;
-        padding: 28px 0px;
+        padding: 28px 0;
         text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
 
         &__image {
           width: 270px;
@@ -65,7 +65,7 @@
         }
 
         &:hover {
-          border-bottom: 0px solid red;
+          border-bottom: 0 solid red;
           transition: all 0.3s ease-in-out;
 
           h1 {
