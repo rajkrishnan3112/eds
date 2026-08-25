@@ -1,5 +1,23 @@
 .teaser-container {
   .teaser-wrapper {
+    .two {
+      >div {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .three {
+      >div {
+        flex-direction: column;
+      }
+    }
+
+    .four {
+      >div {
+        flex-direction: column-reverse;
+      }
+    }
+
     .teaser {
       >div {
         display: flex;
@@ -16,7 +34,7 @@
 
         ul {
           list-style: none;
-          margin: 20px 0px;
+          margin: 20px 0;
 
           li {
             position: relative;
@@ -24,7 +42,7 @@
             font-size: 17px;
             line-height: 33px;
 
-            &:before {
+            &::before {
               content: "✓";
               position: absolute;
               left: -35px;
@@ -45,7 +63,7 @@
         }
       }
 
-      P {
+      p {
         margin-top: 8%;
 
         a:first-child {
@@ -66,7 +84,7 @@
           border-radius: 5px;
           font-size: 18px;
           font-weight: bold;
-          margin-left: 0%;
+          margin-left: 0;
           text-decoration: none;
 
           &::after {
@@ -82,24 +100,6 @@
         }
       }
 
-    }
-
-    .two {
-      >div {
-        flex-direction: row-reverse;
-      }
-    }
-
-    .three {
-      >div {
-        flex-direction: column;
-      }
-    }
-
-    .four {
-      >div {
-        flex-direction: column-reverse;
-      }
     }
   }
 }
