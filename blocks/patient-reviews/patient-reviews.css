@@ -22,29 +22,29 @@
   display: block;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__title {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__title {
   text-align: center;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__title .patient-reviews__title-heading {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__title-heading {
   color: #fff;
   font-size: 30px;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__title .patient-reviews__title-description {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__title-description {
   color: #fff;
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__card {
   min-width: 0;
   display: block;
   box-sizing: border-box;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .patient-reviews__card-description {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__card-description {
   position: relative;
   min-height: 94px;
   margin: 0;
@@ -61,7 +61,7 @@
   box-sizing: border-box;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .patient-reviews__card-description::before {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__card-description::before {
   content: "“";
   position: absolute;
   top: 8px;
@@ -72,7 +72,7 @@
   color: #c7dcf7;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .patient-reviews__card-image, .patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .icon-time, .patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .icon-desk {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__card-image, .patient-reviews-container .patient-reviews-wrapper .patient-reviews__card .icon-time, .patient-reviews-container .patient-reviews-wrapper .patient-reviews__card .icon-desk {
   width: 54px;
   height: 54px;
   flex: 0 0 54px;
@@ -81,7 +81,7 @@
   object-fit: cover;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .patient-reviews__card-name {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__card-name {
   color: #fff;
   margin: 0 0 3px;
   font-size: 15px;
@@ -89,7 +89,7 @@
   font-weight: 700;
 }
 
-.patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__card .patient-reviews__card-designation {
+.patient-reviews-container .patient-reviews-wrapper .patient-reviews__card-designation {
   color: #fff;
   margin: 0;
   font-size: 12px;
@@ -130,6 +130,10 @@
   will-change: transform;
 }
 
+/* ==============================
+NAVIGATION
+============================== */
+
 .patient-reviews-container .patient-reviews-wrapper .patient-reviews .patient-reviews__navigation {
   display: flex;
   justify-content: center;
@@ -158,4 +162,4 @@
   width: 20px;
   border-radius: 10px;
   background: #fff;
-}
+}/*# sourceMappingURL=patient-reviews.css.map */
