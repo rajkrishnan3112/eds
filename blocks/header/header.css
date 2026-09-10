@@ -33,9 +33,7 @@ header nav[aria-expanded='true'] {
 }
 
 @media (width >= 900px) {
-  header .nav-wrapper {
-    position: relative;
-  }
+  header .nav-wrapper { position: relative; }
 
   header nav {
     display: flex;
@@ -59,9 +57,7 @@ header nav p {
 header nav a:any-link {
   color: #a1caf4;
   text-decoration: none;
-  &:hover {
-    color: #fff;
-  }
+  &:hover { color: #fff; }
 }
 
 /* hamburger */
@@ -109,17 +105,9 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   background: currentcolor;
 }
 
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
+header nav[aria-expanded='false'] .nav-hamburger-icon::before { top: -6px; }
+header nav[aria-expanded='false'] .nav-hamburger-icon::after { top: 6px; }
+header nav[aria-expanded='true'] .nav-hamburger-icon { height: 22px; }
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::before,
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
@@ -160,13 +148,50 @@ header nav .nav-brand img {
   display: block;
 }
 
+/* tools */
+header nav :where(.nav-tools) {
+  display: flex;
+  align-items: center;
+  color: #177ee5;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav :where(.nav-tools) p a {
+  color: #177ee5;
+  text-decoration: none;
+}
+
+header nav :where(.nav-tools) p {
+  display: inline-block;
+  padding: 10px 8px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  background-color: #fff;
+  color: #177ee5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+header nav :where(.nav-tools) p:hover {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+header nav :where(.nav-tools) p:hover a {
+  color: #fff;
+  cursor: pointer;
+}
+
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
   flex: 0 0 auto;
   display: none;
   visibility: hidden;
-
 }
 
 header nav[aria-expanded='true'] .nav-sections {
@@ -186,13 +211,8 @@ header nav .nav-sections ul > li {
   position: relative;
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
-}
-
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
-}
+header nav .nav-sections ul > li > ul { margin-top: 0; }
+header nav .nav-sections ul > li > ul > li { font-weight: 400; }
 
 header nav .nav-sections ul > li > p {
   color: #fff;
@@ -212,13 +232,8 @@ header nav .nav-sections ul > li > p::after {
   transition: width 0.3s ease;
 }
 
-header nav .nav-sections ul > li > p:hover {
-  color: #fff;
-}
-
-header nav .nav-sections ul > li > p:hover::after {
-  width: 50%;
-}
+header nav .nav-sections ul > li > p:hover { color: #fff; }
+header nav .nav-sections ul > li > p:hover::after { width: 50%; }
 
 @media (width >= 900px) {
   header nav .nav-sections {
@@ -226,10 +241,7 @@ header nav .nav-sections ul > li > p:hover::after {
     visibility: visible;
     white-space: nowrap;
   }
-
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
+  header nav[aria-expanded='true'] .nav-sections { align-self: unset; }
 
   header nav .nav-sections .nav-drop {
     position: relative;
@@ -294,52 +306,14 @@ header nav .nav-sections ul > li > p:hover::after {
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--light-color);
   }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li { padding: 8px 0; }
 }
 
-/* tools */
-header nav .nav-tools {
-  display: flex;
-  align-items: center;
-   color: #177ee5;
-}
-header nav .nav-tools p a {
-  color: #177ee5;
-  text-decoration: none;
-}
-header nav .nav-tools p {
-  display: inline-block;
-  padding: 10px 8px;
-  border-radius: 30px;
-   border: 2px solid transparent;
-  background-color: #fff;
-  color: #177ee5;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-}
-header nav .nav-tools p:hover{
-  background-color: transparent;
-  border: 2px solid #fff;
-}
-header nav .nav-tools p:hover a {
-  color: #fff;
-  cursor: pointer;
-}
-.blue-background {
-  background-color: #2185df;
-}
+.blue-background { background-color: #2185df; }
 
 /* Main */
-body.home-page main {
-  background: transparent;
-}
+body.home-page main { background: transparent; }
+
 /* Header */
 body.home-page header,
 body.home-page header .header,
