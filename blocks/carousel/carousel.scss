@@ -1,0 +1,155 @@
+.carousel-container {
+    position: relative;
+    background: #1781e5;
+     background-image: url('../images/hero-bg.png') ;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 55px 0 40px;
+    overflow: hidden;
+    .carousel-wrapper{
+        position: relative;
+        z-index: 1;
+        .carousel{
+                max-width: 1140px;
+                margin: 0 auto; 
+                display: block;
+                .patient-reviews__title{
+                    text-align: center;
+                    &-heading{
+                        color: #fff;
+                        font-size: 30px;
+                    }
+                    &-description{
+                        color: #fff;
+                        font-size: 16px;
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+                }
+
+                .patient-reviews__card{
+                    // flex: 0 0 calc(50% - 15px);
+                    min-width: 0;
+                    display: block;
+                    box-sizing: border-box;
+                    
+                    &-description{
+                        position: relative;
+                        min-height: 94px;
+                        margin: 0;
+                        padding: 25px 35px 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #fff;
+                        border-radius: 4px;
+                        color: #505356;
+                        font-size: 14px;
+                        line-height: 1.8;
+                        text-align: center;
+                        box-sizing: border-box;
+                        &::before {
+                            content: "“";
+                            position: absolute;
+                            top: 8px;
+                            left: 13px;
+                            font-size: 48px;
+                            line-height: 1;
+                            font-weight: 700;
+                            color: #c7dcf7;
+                        }
+                    }
+                    &-image ,.icon-time ,.icon-desk{
+                        width: 54px;
+                        height: 54px;
+                        flex: 0 0 54px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        object-fit: cover;
+                    }
+                    &-name{
+                        color: #fff;
+                        margin: 0 0 3px;
+                        font-size: 15px;
+                        line-height: 1.3;
+                        font-weight: 700;
+                    }
+                    &-designation{
+                        color: #fff;
+                        margin: 0;
+                        font-size: 12px;
+                        line-height: 1.3;
+                    }
+                }
+
+                .patient-reviews__card-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                }
+
+                .patient-reviews__card-details {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .patient-reviews__carousel {
+                    overflow: hidden;
+                    width: 100%;
+                    margin-top: 30px;
+                }
+                
+                .patient-reviews__slide {
+                    flex: 0 0 25.2%;
+                    width: 50%;
+                    display: flex;
+                    gap: 30px;
+                    box-sizing: border-box;
+                }
+
+                .patient-reviews__track {
+                   display: flex;
+                    gap: 30px;
+                    width: max-content;
+                    transition:
+                    transform 0.5s ease-in-out;
+                    will-change: transform;
+                }
+                /* ==============================
+                NAVIGATION
+                ============================== */
+                .patient-reviews__navigation {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 45px;
+                }
+
+                .patient-reviews__dots {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 4px;
+                }
+                .patient-reviews__dot {
+                    width: 10px;
+                    height: 10px;
+                    padding: 0;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    background: transparent;
+                    cursor: pointer;
+                   transition:
+                    width 0.2s ease,
+                    background 0.2s ease;
+                }
+
+                .patient-reviews__dot.active {
+                    width: 20px;
+                    border-radius: 10px;
+                    background: #fff;
+                }
+        }
+    }
+}
