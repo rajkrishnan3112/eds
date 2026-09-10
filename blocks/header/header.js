@@ -168,4 +168,25 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  document.body.classList.add('home-page');
+
+  // =====================================
+  // ADD THIS PART
+  // =====================================
+
+  const header = block.closest('.header-wrapper');
+  const hero = document.querySelector('.hero-container');
+
+  if (header) {
+    header.classList.add('blue-background');
+  }
+
+  if (hero) {
+    hero.classList.add('blue-background');
+  }
+
+  // =====================================
+  // END
+  // =====================================
 }
