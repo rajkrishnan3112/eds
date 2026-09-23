@@ -1,26 +1,30 @@
 .custom-form {
-  margin-top: 0px !important;
+  margin-top: 0 !important;
 }
+
 .custom-form .form-wrapper {
   margin: auto;
   max-width: 1350px !important;
-  padding: 0px;
+  padding: 0;
 }
+
 .custom-form .form-wrapper .custom-appointment {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-image {
   position: relative;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-image picture,
 .custom-form .form-wrapper .custom-appointment .custom-appointment-image img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-image .custom-appointment-phone {
   position: absolute;
   right: 0;
@@ -30,47 +34,55 @@
   align-items: center;
   gap: 12px;
   padding: 18px 30px;
-  background: rgba(0, 0, 0, 0.68);
+  background: rgb(0 0 0 / 68%);
   color: #fff;
   font-size: 30px;
   font-weight: 700;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-image .custom-appointment-phone .icon {
   display: inline-flex;
   width: 28px;
   height: 28px;
   flex: 0 0 28px;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-image .custom-appointment-phone .icon img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
+
 .custom-form .form-wrapper .custom-appointment .form-submit {
   grid-column: 1/-1;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content {
   background: #177ee5;
   padding: 30px 25px;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content h2 {
   margin: 0 0 30px;
   color: #fff;
   font-size: 32px;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 30px;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content .form-field {
   margin: 0;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content .form-field.form-textarea, .custom-form .form-wrapper .custom-appointment .custom-appointment-content .form-field.form-submit {
   grid-column: 1/-1;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content input, .custom-form .form-wrapper .custom-appointment .custom-appointment-content select, .custom-form .form-wrapper .custom-appointment .custom-appointment-content textarea {
   width: 100%;
   height: 50px;
@@ -83,11 +95,13 @@
   font-size: 14px;
   box-sizing: border-box;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content textarea {
   height: 120px;
   padding: 14px 16px;
   resize: vertical;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content button {
   padding: 14px 20px;
   border: 2px solid transparent;
@@ -100,6 +114,7 @@
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
+
 .custom-form .form-wrapper .custom-appointment .custom-appointment-content button:hover {
   border-color: #fff;
   background: #177ee5;
@@ -114,7 +129,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgb(0 0 0 / 55%);
 }
 
 .appointment-success-modal {
@@ -125,13 +140,15 @@
   border-radius: 8px;
   background: #fff;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
 }
+
 .appointment-success-modal h3 {
   margin: 0 0 10px;
   color: #177ee5;
   font-size: 26px;
 }
+
 .appointment-success-modal p {
   margin: 0 0 25px;
   color: #555;
@@ -176,53 +193,65 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (min-width: 320px) and (max-width: 767px) {
+@media (width >= 320px) and (width <= 767px) {
   .custom-form {
     margin-top: 0 !important;
   }
+
   .custom-form .form-wrapper {
     max-width: 100% !important;
     padding: 0;
   }
+
   .custom-form .form-wrapper .custom-appointment {
     grid-template-columns: 1fr;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-image .custom-appointment-phone {
     right: 0;
     bottom: 30px;
     padding: 12px 18px;
     font-size: 20px;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-image .custom-appointment-phone .icon {
     width: 22px;
     height: 22px;
     flex: 0 0 22px;
   }
+
   .custom-form .form-wrapper .custom-appointment .form-submit {
     grid-column: 1;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content {
     padding: 30px 20px;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content h2 {
     margin-bottom: 20px;
     font-size: 26px;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content form {
     grid-template-columns: 1fr;
     gap: 15px;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content .form-field.form-textarea, .custom-form .form-wrapper .custom-appointment .custom-appointment-content .form-field.form-submit {
     grid-column: 1;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content input,
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content select,
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content textarea {
     font-size: 14px;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content textarea {
     height: 120px;
   }
+
   .custom-form .form-wrapper .custom-appointment .custom-appointment-content button {
     padding: 12px 20px;
     font-size: 13px;

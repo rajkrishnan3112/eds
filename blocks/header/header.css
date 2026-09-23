@@ -318,6 +318,7 @@ header nav .nav-sections ul > li > p:hover::after { width: 50%; }
 /* .blue-background { background-color: #2185df; } */
 
 /* Main */
+
 /* body.home-page main { background: transparent; } */
 
 /* Header */
@@ -329,7 +330,7 @@ body.home-page header nav {
 }
 
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (width >= 320px) and (width <= 767px) {
   /* Sections */
   header nav .nav-sections {
     grid-area: sections;

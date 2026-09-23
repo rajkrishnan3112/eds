@@ -5,41 +5,48 @@
   align-items: start;
   padding: 0 45px 45px;
   box-sizing: border-box;
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
+
 .custom-faq .default-content-wrapper {
   grid-column: 1/-1;
   text-align: center;
 }
+
 .custom-faq .default-content-wrapper h2 {
   font-size: 32px;
   color: #161e39;
   font-weight: bold;
   margin-bottom: 15px;
 }
+
 .custom-faq .default-content-wrapper p {
   font-size: 16px;
   max-width: 620px;
-  margin: 0 auto 0px;
+  margin: 0 auto;
   padding: 0 22px;
 }
+
 .custom-faq .accordion-wrapper {
   margin: 0;
   padding: 0;
   align-self: start;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq {
   display: grid;
   gap: 20px;
-  padding: 0px 0px 0px 50px;
+  padding: 0 0 0 50px;
   width: 98%;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item {
   background: #fff;
   border: 1px solid #e6e9ef;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item-label {
   display: flex;
   align-items: center;
@@ -57,6 +64,7 @@
   cursor: pointer;
   transition: color 0.25s ease;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item-label::after {
   content: "";
   flex: none;
@@ -68,12 +76,14 @@
   background-size: contain;
   transition: transform 0.25s ease;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item-body {
   display: grid;
   grid-template-rows: 0fr;
   visibility: hidden;
   transition: grid-template-rows 0.3s ease, visibility 0.3s;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item-content {
   min-height: 0;
   overflow: hidden;
@@ -82,28 +92,35 @@
   font-size: 16px;
   line-height: 2;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item-content p {
   margin: 0;
   padding: 20px 24px 24px;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item.is-open .accordion-item-label {
   color: #177ee5;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item.is-open .accordion-item-label::after {
   background-image: url("/icons/arrow-down-blue.svg");
   transform: rotate(180deg);
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item.is-open .accordion-item-body {
   grid-template-rows: 1fr;
   visibility: visible;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq .accordion-item.is-open .accordion-item-content {
   border-top-color: #eef0f4;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq-image {
   padding-right: 70px;
   align-self: start;
 }
+
 .custom-faq .accordion-wrapper .accordion-faq-image .icon,
 .custom-faq .accordion-wrapper .accordion-faq-image img {
   display: block;
@@ -112,48 +129,58 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (min-width: 320px) and (max-width: 767px) {
+@media (width >= 320px) and (width <= 767px) {
   .custom-faq {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 0 20px 35px;
     margin-bottom: 0 !important;
   }
+
   .custom-faq .default-content-wrapper {
     grid-column: 1;
   }
+
   .custom-faq .default-content-wrapper h2 {
     font-size: 26px;
     margin-bottom: 12px;
   }
+
   .custom-faq .default-content-wrapper p {
     font-size: 14px;
     padding: 0 10px;
   }
+
   .custom-faq .accordion-wrapper {
     margin: 0;
     padding: 0;
   }
+
   .custom-faq .accordion-wrapper .accordion-faq {
     gap: 15px;
     padding: 0;
     width: 100%;
   }
+
   .custom-faq .accordion-wrapper .accordion-faq .accordion-item-label {
     gap: 10px;
     padding: 16px;
     font-size: 16px;
   }
+
   .custom-faq .accordion-wrapper .accordion-faq .accordion-item-content {
     font-size: 14px;
     line-height: 1.7;
   }
+
   .custom-faq .accordion-wrapper .accordion-faq .accordion-item-content p {
     padding: 16px 18px 18px;
   }
+
   .custom-faq .accordion-wrapper .accordion-faq-image {
     padding-right: 0;
   }
+
   .custom-faq .accordion-wrapper .accordion-faq-image .icon,
   .custom-faq .accordion-wrapper .accordion-faq-image img {
     width: 100%;
