@@ -1,0 +1,20 @@
+.section-title {
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  color: #161e39;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  font-size: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  padding: 0 22px;
+}/*# sourceMappingURL=section-title.css.map */

@@ -1,108 +1,122 @@
-export default function decorate(block) {
+function decoratePatientReviews(block) {
   const cards = [...block.children];
 
+  // Add card classes
   cards.forEach((card, index) => {
-    if (index === 0) {
-      card.classList.add('patient-reviews__title');
-    } else {
-      card.classList.add('patient-reviews__card');
-    }
+    card.classList.add(
+      index === 0
+        ? 'patient-reviews__title'
+        : 'patient-reviews__card',
+    );
   });
-  //   cards.forEach((card, index) => {
-  //     card.classList.add(classNames[index]);
-  //   });
-  // Title section
+
+  // Title
   const title = block.querySelector('.patient-reviews__title');
+
   title?.querySelector('h2')?.classList.add(
     'patient-reviews__title-heading',
   );
+
   title?.querySelector('p')?.classList.add(
     'patient-reviews__title-description',
   );
-  // Review cards
-  const reviewCards = block.querySelectorAll(
-    '.patient-reviews__card',
-  );
+  /* --------------------------------
+    Create Carousel
+  -------------------------------- */
 
-  reviewCards.forEach((card) => {
+  function createCarousel() {
+    const carousel = document.createElement('div');
+    carousel.classList.add('patient-reviews__carousel');
+
+    const track = document.createElement('div');
+    track.classList.add('patient-reviews__track');
+
+    carousel.append(track);
+
+    return {
+      carousel,
+      track,
+    };
+  }
+  /* --------------------------------
+   Create Navigation
+  -------------------------------- */
+
+  function createNavigation() {
+    const navigation = document.createElement('div');
+    navigation.classList.add('patient-reviews__navigation');
+
+    const dots = document.createElement('div');
+    dots.classList.add('patient-reviews__dots');
+
+    navigation.append(dots);
+
+    return {
+      navigation,
+      dots,
+    };
+  }
+
+  /* --------------------------------
+   Review Card
+  -------------------------------- */
+
+  function decorateReviewCard(card) {
     const image = card.querySelector('p:has(img)');
     const name = card.querySelector('h4');
     const designation = card.querySelector('h5');
+    const description = card.querySelector('p:not(:has(img))');
 
-    card
-      .querySelector('p:not(:has(img))')
-      ?.classList.add('patient-reviews__card-description');
+    description?.classList.add(
+      'patient-reviews__card-description',
+    );
 
     image?.classList.add('patient-reviews__card-image');
-
     name?.classList.add('patient-reviews__card-name');
 
     designation?.classList.add(
       'patient-reviews__card-designation',
     );
 
-    if (image && name && designation) {
-      const info = document.createElement('div');
-
-      info.classList.add(
-        'patient-reviews__card-info',
-      );
-
-      const details = document.createElement('div');
-
-      details.classList.add(
-        'patient-reviews__card-details',
-      );
-
-      details.append(name, designation);
-
-      info.append(image, details);
-
-      card.append(info);
+    if (!image || !name || !designation) {
+      return;
     }
+
+    const info = document.createElement('div');
+    info.classList.add('patient-reviews__card-info');
+
+    const details = document.createElement('div');
+    details.classList.add('patient-reviews__card-details');
+
+    details.append(name, designation);
+    info.append(image, details);
+
+    card.append(info);
+  }
+  // Review cards
+  const reviewCards = [
+    ...block.querySelectorAll('.patient-reviews__card'),
+  ];
+
+  reviewCards.forEach((card) => {
+    decorateReviewCard(card);
   });
-  // -----------------------------
+
   // Create carousel
-  // -----------------------------
+  const { carousel, track } = createCarousel();
 
-  const carousel = document.createElement('div');
-
-  carousel.classList.add(
-    'patient-reviews__carousel',
-  );
-
-  const track = document.createElement('div');
-
-  track.classList.add(
-    'patient-reviews__track',
-  );
-
-  carousel.append(track);
-
-  // -----------------------------
   // Create slides
-  // 2 cards per slide
-  // -----------------------------
-
   const cardsPerSlide = 2;
-
   const slideCount = Math.ceil(
     reviewCards.length / cardsPerSlide,
   );
 
-  for (
-    let index = 0;
-    index < reviewCards.length;
-    index += cardsPerSlide
-  ) {
+  for (let index = 0; index < reviewCards.length; index += cardsPerSlide) {
     const slide = document.createElement('div');
 
-    slide.classList.add(
-      'patient-reviews__slide',
-    );
+    slide.classList.add('patient-reviews__slide');
 
     const firstCard = reviewCards[index];
-
     const secondCard = reviewCards[index + 1];
 
     if (firstCard) {
@@ -116,52 +130,22 @@ export default function decorate(block) {
     track.append(slide);
   }
 
-  // -----------------------------
-  // Put carousel after title
-  // -----------------------------
-
+  // Add carousel after title
   title?.after(carousel);
 
-  // -----------------------------
-  // Create navigation
-  // -----------------------------
-
-  const navigation = document.createElement('div');
-
-  navigation.classList.add(
-    'patient-reviews__navigation',
-  );
-
-  const dots = document.createElement('div');
-
-  dots.classList.add(
-    'patient-reviews__dots',
-  );
-
-  navigation.append(dots);
+  // Navigation
+  const { navigation, dots } = createNavigation();
 
   carousel.after(navigation);
 
-  // -----------------------------
   // Carousel state
-  // -----------------------------
-
   let currentSlide = 0;
-
-  // -----------------------------
-  // Move carousel
-  // -----------------------------
+  let autoScrollTimer;
 
   const moveCarousel = (slideIndex) => {
     const slides = [
-      ...track.querySelectorAll(
-        '.patient-reviews__slide',
-      ),
+      ...track.querySelectorAll('.patient-reviews__slide'),
     ];
-
-    if (!slides.length) {
-      return;
-    }
 
     const slide = slides[slideIndex];
 
@@ -174,9 +158,7 @@ export default function decorate(block) {
     currentSlide = slideIndex;
 
     dots
-      .querySelectorAll(
-        '.patient-reviews__dot',
-      )
+      .querySelectorAll('.patient-reviews__dot')
       .forEach((dot, index) => {
         dot.classList.toggle(
           'active',
@@ -185,46 +167,30 @@ export default function decorate(block) {
       });
   };
 
-  // -----------------------------
-  // Auto scroll
-  // -----------------------------
-
-  let autoScrollTimer;
+  const stopAutoScroll = () => {
+    window.clearInterval(autoScrollTimer);
+  };
 
   const startAutoScroll = () => {
     if (slideCount < 2) {
       return;
     }
 
-    window.clearInterval(autoScrollTimer);
+    stopAutoScroll();
 
     autoScrollTimer = window.setInterval(() => {
       const nextSlide = (currentSlide + 1) % slideCount;
 
       moveCarousel(nextSlide);
-    }, 5000);
+    }, 3000);
   };
 
-  const stopAutoScroll = () => {
-    window.clearInterval(autoScrollTimer);
-  };
-
-  // -----------------------------
   // Create dots
-  // -----------------------------
-
-  for (
-    let index = 0;
-    index < slideCount;
-    index += 1
-  ) {
+  for (let index = 0; index < slideCount; index += 1) {
     const dot = document.createElement('button');
 
     dot.type = 'button';
-
-    dot.classList.add(
-      'patient-reviews__dot',
-    );
+    dot.classList.add('patient-reviews__dot');
 
     dot.setAttribute(
       'aria-label',
@@ -243,41 +209,24 @@ export default function decorate(block) {
     dots.append(dot);
   }
 
-  // -----------------------------
   // Pause on hover
-  // -----------------------------
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
 
-  carousel.addEventListener(
-    'mouseenter',
-    stopAutoScroll,
-  );
-
-  carousel.addEventListener(
-    'mouseleave',
-    startAutoScroll,
-  );
-
-  carousel.addEventListener(
-    'focusin',
-    stopAutoScroll,
-  );
-
-  carousel.addEventListener(
-    'focusout',
-    startAutoScroll,
-  );
+  // Pause on focus
+  carousel.addEventListener('focusin', stopAutoScroll);
+  carousel.addEventListener('focusout', startAutoScroll);
 
   // Start carousel
   startAutoScroll();
 
-  // -----------------------------
   // Resize
-  // -----------------------------
-
-  window.addEventListener(
-    'resize',
-    () => {
-      moveCarousel(currentSlide);
-    },
-  );
+  window.addEventListener('resize', () => {
+    moveCarousel(currentSlide);
+  });
+}
+export default function decorate(block) {
+  if (block.classList.contains('patient-reviews')) {
+    decoratePatientReviews(block);
+  }
 }

@@ -74,7 +74,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: transparent;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -87,7 +87,7 @@ header nav .nav-hamburger-icon::after {
   box-sizing: border-box;
   display: block;
   position: relative;
-  width: 20px;
+  width: 22px;
 }
 
 header nav .nav-hamburger-icon::before,
@@ -102,7 +102,7 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   height: 2px;
   border-radius: 2px;
-  background: currentcolor;
+  background: #fff;
 }
 
 header nav[aria-expanded='false'] .nav-hamburger-icon::before { top: -6px; }
@@ -118,6 +118,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   width: 24px;
   height: 2px;
   border-radius: 2px;
+  background: #fff;
 }
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
@@ -157,17 +158,17 @@ header nav :where(.nav-tools) {
 
 /* stylelint-disable-next-line no-descending-specificity */
 header nav :where(.nav-tools) p a {
-  color: #177ee5;
+  color: #177ee5 !important;
   text-decoration: none;
 }
 
 header nav :where(.nav-tools) p {
   display: inline-block;
-  padding: 10px 8px;
+  padding: 13px 8px;
   border-radius: 30px;
   border: 2px solid transparent;
   background-color: #fff;
-  color: #177ee5;
+  color: #177ee5 ;
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
@@ -179,10 +180,11 @@ header nav :where(.nav-tools) p {
 header nav :where(.nav-tools) p:hover {
   background-color: transparent;
   border: 2px solid #fff;
+  cursor: pointer;
 }
 
 header nav :where(.nav-tools) p:hover a {
-  color: #fff;
+  color: #fff !important;
   cursor: pointer;
 }
 
@@ -209,6 +211,10 @@ header nav .nav-sections ul {
 header nav .nav-sections ul > li {
   font-weight: 500;
   position: relative;
+}
+
+header nav .nav-sections ul > li >p >a{
+  color: #a1caf4;
 }
 
 header nav .nav-sections ul > li > ul { margin-top: 0; }
@@ -309,10 +315,11 @@ header nav .nav-sections ul > li > p:hover::after { width: 50%; }
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li { padding: 8px 0; }
 }
 
-.blue-background { background-color: #2185df; }
+/* .blue-background { background-color: #2185df; } */
 
 /* Main */
-body.home-page main { background: transparent; }
+
+/* body.home-page main { background: transparent; } */
 
 /* Header */
 body.home-page header,
@@ -320,4 +327,78 @@ body.home-page header .header,
 body.home-page header .nav-wrapper,
 body.home-page header nav {
   background: transparent;
+}
+
+
+@media (width >= 320px) and (width <= 767px) {
+  /* Sections */
+  header nav .nav-sections {
+    grid-area: sections;
+    display: none;
+    visibility: hidden;
+    width: 100%;
+    padding: 20px 20px 35px;
+    box-sizing: border-box;
+    background: #177ee5;
+    color: #fff !important;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections {
+    display: block;
+    visibility: visible;
+    align-self: start;
+  }
+
+  header nav .nav-sections ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: var(--body-font-size-s);
+  }
+
+  header nav .nav-sections ul > li {
+    position: relative;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  header nav .nav-sections ul > li > p {
+    position: relative;
+    margin: 0;
+    padding: 15px 0;
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  header nav .nav-sections ul > li > p > a {
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  header nav .nav-sections ul > li > ul {
+    margin-top: 0;
+  }
+
+  header nav .nav-sections ul > li > ul > li {
+    font-weight: 400;
+  }
+
+  header nav .nav-sections ul > li > p::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+
+  header nav .nav-sections ul > li > p:hover {
+    color: #fff;
+  }
+
+  header nav .nav-sections ul > li > p:hover::after {
+    width: 50px;
+  }
 }
