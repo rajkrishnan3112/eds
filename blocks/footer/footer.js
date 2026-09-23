@@ -22,14 +22,14 @@ export default async function decorate(block) {
   const items = [...block.children];
 
   // ---------- Newsletter heading ----------
-  items[0]?.classList.add('custom-footer__newsletter');
+  items[0]?.classList.add('custom-footer-newsletter');
 
   // ---------- Subscribe form ----------
   // ---------- Subscribe form ----------
   const mailRow = items[1];
 
   if (mailRow) {
-    mailRow.classList.add('custom-footer__mail');
+    mailRow.classList.add('custom-footer-mail');
 
     const cells = [...mailRow.children];
     const buttonText = cells[1]?.querySelector('a')?.textContent.trim() || 'Subscribe';
@@ -48,11 +48,11 @@ export default async function decorate(block) {
     mailRow.innerHTML = '';
 
     const form = document.createElement('form');
-    form.className = 'custom-footer__newsletter-form';
+    form.className = 'custom-footer-newsletter-form';
     form.noValidate = true;
 
     form.innerHTML = `
-      <div class="custom-footer__input-wrap">
+      <div class="custom-footer-input-wrap">
         <input
           type="${emailType}"
           name="${emailField?.Field || 'email'}"
@@ -62,7 +62,7 @@ export default async function decorate(block) {
         />
         <button type="submit">${buttonText}</button>
       </div>
-      <p class="custom-footer__form-error" aria-live="polite"></p>
+      <p class="custom-footer-form-error" aria-live="polite"></p>
     `;
 
     mailRow.appendChild(form);
@@ -71,7 +71,7 @@ export default async function decorate(block) {
       e.preventDefault();
 
       const input = form.querySelector('input');
-      const error = form.querySelector('.custom-footer__form-error');
+      const error = form.querySelector('.custom-footer-form-error');
 
       if (!input.value.trim()) {
         error.textContent = `${emailLabel} is required`;
@@ -88,13 +88,13 @@ export default async function decorate(block) {
 
   // ---------- About column ----------
   const about = items[2];
-  about?.classList.add('custom-footer__about');
+  about?.classList.add('custom-footer-about');
 
   const logoPara = about?.querySelector('picture')?.closest('p');
   if (logoPara) {
     const picture = logoPara.querySelector('picture');
     const logoWrap = document.createElement('div');
-    logoWrap.className = 'custom-footer__logo';
+    logoWrap.className = 'custom-footer-logo';
     logoWrap.appendChild(picture);
     // logoPara.classList.add('custom-footer-description');
     logoPara.before(logoWrap);
@@ -103,25 +103,25 @@ export default async function decorate(block) {
   const socialItems = about?.querySelectorAll('.icon');
   if (socialItems?.length) {
     const socialWrap = document.createElement('div');
-    socialWrap.className = 'custom-footer__social';
+    socialWrap.className = 'custom-footer-social';
     const firstIconPara = socialItems[0].closest('p');
     firstIconPara?.before(socialWrap);
     socialItems.forEach((icon) => {
       const para = icon.closest('p');
-      para?.classList.add('custom-footer__social-item');
+      para?.classList.add('custom-footer-social-item');
       if (para) socialWrap.appendChild(para);
     });
   }
 
   // ---------- Quick Links ----------
-  items[3]?.classList.add('custom-footer__quick-links');
+  items[3]?.classList.add('custom-footer-quick-links');
 
   // ---------- Useful Links ----------
-  items[4]?.classList.add('custom-footer__useful-links');
+  items[4]?.classList.add('custom-footer-useful-links');
 
   // ---------- Quick Contact ----------
   const contact = items[5];
-  contact?.classList.add('custom-footer__contact');
+  contact?.classList.add('custom-footer-contact');
 
   const contactList = contact?.querySelector('ul');
   const contactItems = contactList ? [...contactList.querySelectorAll(':scope > li')] : [];
@@ -135,5 +135,5 @@ export default async function decorate(block) {
   });
 
   // ---------- Copyright ----------
-  items[6]?.classList.add('custom-footer__copyright');
+  items[6]?.classList.add('custom-footer-copyright');
 }
