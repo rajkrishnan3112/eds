@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .carousel-container {
   position: relative;
   background: #1781e5;
@@ -6,41 +5,42 @@
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  padding: 55px 0 40px;
+  padding: 55px 0 35px;
   overflow: hidden;
 }
 .carousel-container .carousel-wrapper {
   position: relative;
   z-index: 1;
 }
-.carousel-container .carousel-wrapper .carousel {
+.carousel-container .carousel-wrapper .patient-reviews {
   max-width: 1140px;
   margin: 0 auto;
   display: block;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__title {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__title {
   text-align: center;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__title-heading {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__title-heading {
   color: #fff;
   font-size: 30px;
+  margin: 0 0 13px;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__title-description {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__title-description {
   color: #fff;
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card {
   min-width: 0;
   display: block;
   box-sizing: border-box;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-description {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-description {
   position: relative;
   min-height: 94px;
   margin: 0;
-  padding: 25px 35px 20px;
+  padding: 17px 34px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,17 +52,20 @@
   text-align: center;
   box-sizing: border-box;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-description::before {
-  content: "“";
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-description::before {
+  content: "";
   position: absolute;
   top: 8px;
-  left: 13px;
-  font-size: 48px;
-  line-height: 1;
-  font-weight: 700;
-  color: #c7dcf7;
+  left: 23px;
+  width: 30px;
+  height: 30px;
+  background-image: url("/icons/quote-left.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.3;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-image, .carousel-container .carousel-wrapper .carousel .patient-reviews__card .icon-time, .carousel-container .carousel-wrapper .carousel .patient-reviews__card .icon-desk {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-image, .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card .icon-time, .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card .icon-desk {
   width: 54px;
   height: 54px;
   flex: 0 0 54px;
@@ -71,42 +74,42 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-name {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-name {
   color: #fff;
   margin: 0 0 3px;
   font-size: 15px;
   line-height: 1.3;
   font-weight: 700;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-designation {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-designation {
   color: #fff;
   margin: 0;
   font-size: 12px;
   line-height: 1.3;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-info {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-info {
   display: flex;
   align-items: center;
   gap: 14px;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__card-details {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__carousel {
+.carousel-container .carousel-wrapper .patient-reviews .patient-reviews__carousel {
   overflow: hidden;
   width: 100%;
   margin-top: 30px;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__slide {
+.carousel-container .carousel-wrapper .patient-reviews__slide {
   flex: 0 0 25.2%;
   width: 50%;
   display: flex;
   gap: 30px;
   box-sizing: border-box;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__track {
+.carousel-container .carousel-wrapper .patient-reviews__track {
   display: flex;
   gap: 30px;
   width: -moz-max-content;
@@ -114,23 +117,21 @@
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
-.carousel-container .carousel-wrapper .carousel {
-  /* ==============================
-  NAVIGATION
-  ============================== */
+.carousel-container .carousel-wrapper .patient-reviews {
+  /* --------NAVIGATION -------*/
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__navigation {
+.carousel-container .carousel-wrapper .patient-reviews__navigation {
   display: flex;
   justify-content: center;
-  margin-top: 45px;
+  margin-top: 50px;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__dots {
+.carousel-container .carousel-wrapper .patient-reviews__dots {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__dot {
+.carousel-container .carousel-wrapper .patient-reviews__dot {
   width: 10px;
   height: 10px;
   padding: 0;
@@ -140,8 +141,61 @@
   cursor: pointer;
   transition: width 0.2s ease, background 0.2s ease;
 }
-.carousel-container .carousel-wrapper .carousel .patient-reviews__dot.active {
+.carousel-container .carousel-wrapper .patient-reviews__dot.active {
   width: 20px;
   border-radius: 10px;
   background: #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 320px) and (max-width: 767px) {
+  .carousel-container {
+    padding: 40px 0 30px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews {
+    max-width: 100%;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__title-heading {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__title-description {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-description {
+    min-height: 94px;
+    padding: 15px 25px 18px;
+    font-size: 14px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-image,
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card .icon-time,
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card .icon-desk {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-name {
+    font-size: 14px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-designation {
+    font-size: 11px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__card-info {
+    gap: 10px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews .patient-reviews__carousel {
+    margin-top: 25px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews__slide {
+    flex: 0 0 100%;
+    width: 100%;
+    gap: 20px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews__track {
+    gap: 20px;
+  }
+  .carousel-container .carousel-wrapper .patient-reviews__navigation {
+    margin-top: 30px;
+  }
 }/*# sourceMappingURL=carousel.css.map */

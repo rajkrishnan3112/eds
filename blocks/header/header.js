@@ -60,7 +60,7 @@ function focusNavSection() {
  */
 function toggleAllNavSections(sections, expanded = false) {
   if (!sections) return;
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+  sections.querySelectorAll('.nav-sections .nav-sections-list > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -139,7 +139,12 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    // give the nav's default-content-wrapper its own class so it
+    // never collides with the generic section-title styling
+    const navContentWrapper = navSections.querySelector(':scope > .default-content-wrapper');
+    if (navContentWrapper) navContentWrapper.classList.add('nav-sections-list');
+
+    navSections.querySelectorAll(':scope .nav-sections-list > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
@@ -172,7 +177,7 @@ export default async function decorate(block) {
   document.body.classList.add('home-page');
 
   // =====================================
-  // ADD THIS PART
+  // ADDED THIS PART
   // =====================================
 
   const header = block.closest('.header-wrapper');
@@ -187,6 +192,6 @@ export default async function decorate(block) {
   }
 
   // =====================================
-  // END
+  // ENDED
   // =====================================
 }

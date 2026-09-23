@@ -1,0 +1,230 @@
+.cards-container{
+  margin-top: 6% !important;
+    .cards-wrapper{
+      //----- Custom Departments Cards -------//
+      .departments-section{
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(283px, 1fr));
+          gap: 35px;
+          padding-bottom: 40px;
+          .cards-item{
+              background: #fbf7f8;
+              text-align: center;
+              border-bottom: 3px solid #177ee5;
+              position: relative;
+              .cards-image{
+                  margin: 0;
+                  img{
+                      width: 100%;
+                  }
+              }
+              .cards-icon{
+                  width: 70px;
+                  height: 70px;
+                  border-radius: 50%;
+                  background-color: #fff;
+                  position: absolute;
+                  top: 228px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transition: background-color 0.3s ease;
+                  img{
+                      width: 32px;
+                      height: 32px;
+                      transition: filter 0.3s ease;
+                  }
+              }
+              .cards-title{
+                  font-size: 18px;
+                  color: #161e39;
+                  margin-top: 40px;
+                  text-transform: capitalize;
+              }
+              .cards-description{
+                  padding: 0px 20px 20px 20px;
+                  color: #515457;
+                  line-height: 25px;
+                  font-size: 14px;
+              }
+              &:hover {
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.6s ease-in-out;
+                  .cards-icon {
+                      background-color: #177ee5;
+                      img {
+                          filter: brightness(0) invert(1);
+                      }
+                  }
+              }
+          }
+      }
+      //------ Custom Facilities Cards ------//
+        .facilities-section {
+          display: flex;
+          gap: var(--gap);
+          --gap: 27px;
+          --visible: 3;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding: 24px 12px;              
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          scrollbar-width: none;          
+          -webkit-overflow-scrolling: touch;
+          cursor: grab;
+          user-select: none;
+          scroll-padding-inline: 12px;
+
+          &::-webkit-scrollbar {
+            display: none;                 
+          }
+
+          &.is-dragging {
+            cursor: grabbing;
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+          }
+
+          > div {
+            flex: 0 0 calc((100% - (var(--gap) * (var(--visible) - 1))) / var(--visible));
+            scroll-snap-align: start;
+          }
+
+          .cards-item {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;  
+
+            picture {
+              display: block;
+                img {
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                  aspect-ratio: 3 / 2;
+                  object-fit: cover;
+                  pointer-events: none;        
+                  -webkit-user-drag: none;
+              }
+            }
+
+            &:hover {
+              transform: scale(1.1);
+              z-index: 2;
+              box-shadow: 0px 0px 10px #177ee5;  
+            }
+          }
+        }
+    }
+}
+.custom-facilities{
+  background-color: #fbf7f8;
+  padding: 50px 0;
+  margin-bottom: 0px  !important;
+}
+// Default content wrapper //
+main .default-content-wrapper{
+    text-align: center;
+      align-items: center;
+      margin-top: 5%;
+      h2 {
+        font-size: 32px;
+        color: #161e39;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      p {
+          font-size: 16px;
+          max-width: 620px;
+          margin: 0 auto;
+          margin-bottom: 35px;
+          padding: 0px 22px;
+        }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .departments-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-bottom: 30px;
+
+    .cards-item {
+      .cards-icon {
+        top: 160px !important;
+      }
+
+      .cards-title {
+        font-size: 18px;
+        margin-top: 40px;
+      }
+
+      .cards-description {
+        padding: 0 20px 20px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+
+      &:hover {
+        box-shadow: none;
+
+        .cards-icon {
+          background-color: #fff;
+
+          img {
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+
+  .facilities-section {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    padding: 15px 12px;
+    overflow: visible;
+
+    > div {
+      width: 100%;
+    }
+
+    .cards-item {
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      picture,
+      picture img {
+        width: 100%;
+      }
+    }
+  }
+
+  .custom-facilities {
+    padding: 35px 0;
+  }
+
+  // Default content wrapper //
+  main .default-content-wrapper {
+    margin-top: 5%;
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 25px;
+      padding: 0 10px;
+    }
+  }
+}
